@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react';
 import './App.css';
+import { Section } from './components/Section';
 
-//const APY_KEY = api_key=2d1ea5bb9d0f92154b9db9cc98f6c371
+//const APY_KEY = 2d1ea5bb9d0f92154b9db9cc98f6c371
 function App() {
 
   const [dataApi, setDataApi] = useState('');
 
   useEffect(() => {
+
     const API_KEY = '2d1ea5bb9d0f92154b9db9cc98f6c371';
-    fetch(`https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=5&with_watch_monetization_types=flatrate`)
+    const ID = '10';
+    fetch(`https://api.themoviedb.org/4/list/${ID}?page=1&api_key=${API_KEY}`)
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setDataApi(data.results))
+      .catch(err => console.log(err))
+
   }, []);
+
   return (
     <div className="App">
-
+      <Section title='Tendencias' data={dataApi} />
     </div>
   );
 }
