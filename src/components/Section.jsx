@@ -6,7 +6,6 @@ export function Section({ title, data }) {
         <div className='section'>
             <h3 className='section__title'>{title}</h3>
             <div className='section__items'>
-                {console.log(data)}
                 {
                     data.map(item => {
                         return <Card
