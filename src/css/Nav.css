@@ -1,0 +1,17 @@
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav>*,
+.nav__list-cont li {
+    padding: 0px 5px;
+}
+
+.nav__list-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}

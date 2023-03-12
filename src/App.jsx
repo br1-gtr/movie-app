@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Section } from './components/Section';
+import { Header } from './components/Header';
+import { Section } from './components/Section.jsx';
+
 
 function App() {
 
@@ -12,10 +14,12 @@ function App() {
 
   const [section_1, setSection_1] = useState([]);
   const [section_2, setSection_2] = useState([]);
+  const [section_3, setSection_3] = useState([]);
 
   useEffect(() => {
     fetchData(API_URL_TRENDING, API_KEY, setSection_1);
     fetchData(API_URL_4v, API_KEY, setSection_2);
+    fetchData(API_URL_4v2, API_KEY, setSection_3);
   }, []);
 
 
@@ -29,8 +33,10 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Section title='Tendencias' dataApi={section_1} />
       <Section title='Continuar Viendo' dataApi={section_2} />
+      <Section title='Seleccion para ti' dataApi={section_3} />
     </div>
   );
 }
