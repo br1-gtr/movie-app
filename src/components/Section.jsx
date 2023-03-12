@@ -8,7 +8,7 @@ export function Section({ title, dataApi }) {
             <h3 className='section__title'>{title}</h3>
             <div className='section__items'>
                 {
-                    dataApi.data.map(item => {
+                    dataApi.map(item => {
                         return <Card
                             key={item.id}
                             img={item.poster_path}
