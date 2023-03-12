@@ -1,8 +1,15 @@
+.section {
+    margin-bottom: 40px;
+}
+
 .section__title {
+    font-size: 28px;
     text-align: left;
+    margin-bottom: 1px;
 }
 
 .section__items {
     display: flex;
     overflow-x: scroll;
+    padding: 15px 10px;
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
-import { Header } from './components/Header';
+import { Header } from './components/Header.jsx';
+import { Slider } from './components/Slider.jsx';
 import { Section } from './components/Section.jsx';
 
 
@@ -26,17 +27,17 @@ function App() {
   const fetchData = (url, key, setDataState) => {
     fetch(`${url}${key}`)
       .then(res => res.json())
-      .then(data => { console.log(data.results); setDataState(data.results); })
+      .then(data => setDataState(data))
       .catch(err => console.log(err))
-
   };
 
   return (
     <div className="App">
       <Header />
+      <Slider data={section_1} />
       <Section title='Tendencias' dataApi={section_1} />
       <Section title='Continuar Viendo' dataApi={section_2} />
-      <Section title='Seleccion para ti' dataApi={section_3} />
+      <Section title='Seleccion para mi' dataApi={section_3} />
     </div>
   );
 }
