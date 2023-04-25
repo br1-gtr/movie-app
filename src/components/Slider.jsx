@@ -12,10 +12,14 @@ export function Slider({ data }) {
             arrCarr.push(data.results[i])
         }
     }
+
+
+
     return (
         (arrCarr)
             ? (
-                <Carousel infiniteLoop={true}
+                <Carousel
+                    infiniteLoop={true}
                     showThumbs={false}
                     autoPlay={true}
                     interval={3000}
@@ -24,7 +28,7 @@ export function Slider({ data }) {
                     className='carr'>
 
                     {arrCarr.map(element => {
-                        return <div className='carr__item'>
+                        return <div className='carr__item' key={element.original_title}>
                             <img src={`https://image.tmdb.org/t/p/original${element.backdrop_path}`} alt="dsa" />
                         </div>
                     })}
