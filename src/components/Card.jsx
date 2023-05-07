@@ -1,8 +1,21 @@
 import React from "react";
 import { AiOutlinePlayCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 import '../css/Card.css'
-export function Card({ img }) {
+export function Card({ img, cv = false }) {
     const iconSize = 65;
+    const cvProgres = Math.floor((Math.random() * (100 - 40 + 1)) + 40);
+    console.log(cvProgres);
+
+    const styleDivCv = {
+        width: `${cvProgres}%`,
+        height: "5px",
+        position: "absolute",
+        bottom: "0",
+        left: "0",
+        backgroundColor: "rgb(216, 255, 44)",
+        borderTopRightRadius: "20px"
+    }
+
     return (
         <div className='card'>
             <img src={`https://image.tmdb.org/t/p/w200${img}`} alt="" className='card__img' />
@@ -10,6 +23,7 @@ export function Card({ img }) {
                 <AiOutlinePlayCircle size={iconSize} className='card__btn card__btn--play' />
                 <AiOutlinePlusCircle size={iconSize} className='card__btn card__btn--add-list' />
             </div>
+            {cv && <div className='continuar-viendo' style={styleDivCv}></div>}
         </div>
     )
 }

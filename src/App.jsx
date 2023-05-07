@@ -3,7 +3,7 @@ import './App.css';
 import { Header } from './components/Header.jsx';
 import { Slider } from './components/Slider.jsx';
 import { Section } from './components/Section.jsx';
-
+import { Footer } from './components/Footer.jsx';
 
 function App() {
 
@@ -38,6 +38,7 @@ function App() {
       <Section title='Tendencias' dataApi={section_1} />
       <Section title='Continuar Viendo' dataApi={section_2} />
       <Section title='Seleccion para mi' dataApi={section_3} />
+      <Footer />
     </div>
   );
 }
