@@ -3,8 +3,8 @@ import { AiOutlinePlayCircle, AiOutlinePlusCircle } from 'react-icons/ai';
 import '../css/Card.css'
 export function Card({ img, cv = false }) {
     const iconSize = 65;
-    const cvProgres = Math.floor((Math.random() * (100 - 40 + 1)) + 40);
-    console.log(cvProgres);
+    const cvProgres = Math.floor((Math.random() * (98 - 40 + 1)) + 40);
+    //console.log(cvProgres);
 
     const styleDivCv = {
         width: `${cvProgres}%`,
@@ -23,7 +23,7 @@ export function Card({ img, cv = false }) {
                 <AiOutlinePlayCircle size={iconSize} className='card__btn card__btn--play' />
                 <AiOutlinePlusCircle size={iconSize} className='card__btn card__btn--add-list' />
             </div>
-            {cv && <div className='continuar-viendo' style={styleDivCv}></div>}
+            {cv && <div style={styleDivCv}></div>}
         </div>
     )
 }

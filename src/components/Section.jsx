@@ -1,45 +1,56 @@
 import React from "react";
 import { Card } from "./Card";
 import '../css/Section.css';
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+
 export function Section({ title, dataApi }) {
-    //const widthNav = window.innerWidth;
+
+    const sliderRef = useRef([]);
+
+    function clickHandlerL() {
+        sliderRef.current.scrollLeft -= 220;
+    }
+    function clickHandlerR() {
+        sliderRef.current.scrollLeft += 220;
+
+    }
+
+
     return (
         (title !== 'Continuar Viendo')
             ? <div className='section'>
                 <h3 className='section__title'>{title}</h3>
-                <motion.div className='section__items' drag='x' dragConstraints={{ right: 0, left: -3056 }}>
+                <button onClick={clickHandlerL}>L</button>
+                <button onClick={clickHandlerR}>R</button>
+                <div className='section__items' ref={sliderRef}>
+
                     {
                         (dataApi.length !== 0)
                             ? dataApi.results.map(item => {
-                                return <motion.div>
-                                    <Card
-                                        key={item.id}
-                                        img={item.poster_path}
-                                    />
-                                </motion.div>
+                                return <Card
+                                    key={item.id}
+                                    img={item.poster_path}
+                                />
                             })
                             : <>Cargando...</>
                     }
-                </motion.div>
+                </div>
             </div>
             : <div className='section'>
                 <h3 className='section__title'>{title}</h3>
-                <motion.div className='section__items' drag='x' dragConstraints={{ right: 0, left: -3056 }}>
+                <div className='section__items'>
                     {
                         (dataApi.length !== 0)
                             ? dataApi.results.map(item => {
-                                return <motion.div>
-                                    <Card
-                                        key={item.id}
-                                        img={item.poster_path}
-                                        cv={true}
-                                    />
-                                </motion.div>
+                                return <Card
+                                    key={item.id}
+                                    img={item.poster_path}
+                                    cv={true}
+                                />
                             })
                             : <>Cargando...</>
                     }
-                </motion.div>
+                </div>
             </div>
 
     )
