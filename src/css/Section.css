@@ -1,6 +1,11 @@
 .section {
     margin: 10px 0px;
     width: 100%;
+    position: relative;
+}
+
+.section:hover .section__btn {
+    opacity: 100%;
 }
 
 .section__title {
@@ -16,7 +21,33 @@
     overflow-x: auto;
 }
 
-/*
+.section__btn {
+    z-index: 10;
+    position: absolute;
+    top: 177px;
+    font-size: 30px;
+    border-style: none;
+    border: 2px solid aqua;
+    color: aquamarine;
+    padding: 10px 16px;
+    background-color: rgba(34, 34, 34, 0.7);
+    border-radius: 50%;
+    box-shadow: 1px 1px 5px black;
+    transition: 0.2s;
+    opacity: 0%;
+}
+
+.btn-l {
+    left: 5px;
+    border-radius: 25px 5px 5px 25px;
+}
+
+.btn-r {
+    right: 5px;
+    border-radius: 5px 25px 25px 5px;
+}
+
+
 .section__items::-webkit-scrollbar {
     width: 0;
-}*/
+}

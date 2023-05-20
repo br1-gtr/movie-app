@@ -5,6 +5,8 @@ import { Slider } from './components/Slider.jsx';
 import { Section } from './components/Section.jsx';
 import { Footer } from './components/Footer.jsx';
 
+import { useStoreML } from './store/store-mi-lista.jsx';
+
 function App() {
 
   const API_URL_4v = 'https://api.themoviedb.org/4/list/10?page=1&api_key=';
@@ -16,6 +18,8 @@ function App() {
   const [section_1, setSection_1] = useState([]);
   const [section_2, setSection_2] = useState([]);
   const [section_3, setSection_3] = useState([]);
+
+  const mi_lista = useStoreML(state => state.mi_lista);
 
   useEffect(() => {
     fetchData(API_URL_TRENDING, API_KEY, setSection_1);
@@ -37,7 +41,8 @@ function App() {
       <Slider data={section_1} />
       <Section title='Tendencias' dataApi={section_1} />
       <Section title='Continuar Viendo' dataApi={section_2} />
-      <Section title='Seleccion para mi' dataApi={section_3} />
+      <Section title='Selección para mi' dataApi={section_3} />
+      <Section title='Mi Lista' dataApi={mi_lista} />
       <Footer />
     </div>
   );

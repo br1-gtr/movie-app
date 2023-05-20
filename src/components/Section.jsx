@@ -18,27 +18,46 @@ export function Section({ title, dataApi }) {
 
     return (
         (title !== 'Continuar Viendo')
-            ? <div className='section'>
-                <h3 className='section__title'>{title}</h3>
-                <button onClick={clickHandlerL}>L</button>
-                <button onClick={clickHandlerR}>R</button>
-                <div className='section__items' ref={sliderRef}>
-
-                    {
-                        (dataApi.length !== 0)
-                            ? dataApi.results.map(item => {
-                                return <Card
-                                    key={item.id}
-                                    img={item.poster_path}
-                                />
-                            })
-                            : <>Cargando...</>
-                    }
+            ? (title === 'Mi Lista') // MI LISTA
+                ? <div className='section'>
+                    <h3 className='section__title'>{title}</h3>
+                    <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
+                    <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
+                    <div className='section__items' ref={sliderRef}>
+                        {
+                            (dataApi.length !== 0)
+                                ? dataApi.map(item => {
+                                    return <Card
+                                        img={item}
+                                    />
+                                })
+                                : <>Cargando...</>
+                        }
+                    </div>
                 </div>
-            </div>
+                : <div className='section'>
+                    <h3 className='section__title'>{title}</h3>
+                    <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
+                    <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
+                    <div className='section__items' ref={sliderRef}>
+                        {
+                            (dataApi.length !== 0)
+                                ? dataApi.results.map(item => {
+                                    return <Card
+                                        key={item.id}
+                                        img={item.poster_path}
+                                    />
+                                })
+                                : <>Cargando...</>
+                        }
+                    </div>
+                </div>
+            //CONTINUAR VIENDO
             : <div className='section'>
                 <h3 className='section__title'>{title}</h3>
-                <div className='section__items'>
+                <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
+                <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
+                <div className='section__items' ref={sliderRef}>
                     {
                         (dataApi.length !== 0)
                             ? dataApi.results.map(item => {
