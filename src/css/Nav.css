@@ -112,7 +112,7 @@
 
     /*NAV-MOBILE*/
     .nav-mobile {
-        position: absolute;
+        /*position: absolute;*/
         font-size: 12px;
         width: 28vw;
         height: 100%;
