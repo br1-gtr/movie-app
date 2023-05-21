@@ -4,6 +4,10 @@
     align-items: center;
 }
 
+.nav__icon {
+    cursor: pointer;
+}
+
 .nav>*,
 .nav__list-cont li {
     padding: 0px 5px;
@@ -33,6 +37,10 @@
     padding: 15px;
 }
 
+.nav-display-none {
+    display: none;
+}
+
 .nav-mobile__list-cont {
     margin-top: 20px;
     position: relative;
@@ -51,9 +59,16 @@
 .nav-mobile__list-cont li {
     list-style: none;
     padding: 5px;
+    cursor: pointer;
+}
+
+.nav-mobile__list-cont li:hover {
+    background-color: #151515;
+    color: rgb(127, 247, 193);
 }
 
 .btn-close-nav {
+    cursor: pointer;
     position: absolute;
     right: 10px;
     color: #e1d200;
@@ -76,4 +91,11 @@
     width: 100%;
     height: 3px;
     background-color: rgb(127, 247, 193);
+}
+
+/*MOBILE-RESPONSIVE*/
+@media screen and (max-width: 700px) {
+    .nav__list-cont {
+        display: none;
+    }
 }

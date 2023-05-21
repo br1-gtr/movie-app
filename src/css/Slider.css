@@ -1,3 +1,28 @@
 .carr__item {
     height: 80vh;
 }
+
+/*MOBILE-RESPONSIVE*/
+@media screen and (max-width: 1300px) {
+    .carr__item {
+        height: 50vh;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .carr__item {
+        height: 45vh;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .carr__item {
+        height: 22vh;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .carr__item {
+        height: 18vh;
+    }
+}

@@ -22,7 +22,7 @@ export function Slider({ data }) {
                     infiniteLoop={true}
                     showThumbs={false}
                     autoPlay={true}
-                    interval={3000}
+                    interval={4000}
                     showArrows={false}
                     showStatus={false}
                     className='carr'>
