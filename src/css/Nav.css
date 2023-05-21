@@ -18,6 +18,7 @@
     justify-content: center;
     align-items: center;
     list-style: none;
+    cursor: pointer;
 }
 
 /*NAV-MOBILE*/
@@ -94,8 +95,34 @@
 }
 
 /*MOBILE-RESPONSIVE*/
+@media screen and (max-width: 1000px) {
+
+    /*NAV-MOBILE*/
+    .nav-mobile {
+        z-index: 10;
+        width: 30vw;
+        padding: 5px;
+    }
+}
+
 @media screen and (max-width: 700px) {
     .nav__list-cont {
         display: none;
+    }
+
+    /*NAV-MOBILE*/
+    .nav-mobile {
+        position: absolute;
+        font-size: 12px;
+        width: 28vw;
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+
+    /*NAV-MOBILE*/
+    .nav-mobile {
+        width: 35vw;
     }
 }

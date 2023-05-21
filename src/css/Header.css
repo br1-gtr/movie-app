@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 5px 20px 10px 20px;
 }
 
 .title {
@@ -50,14 +50,30 @@
     padding: 0px 5px;
 }
 
+.user__screen-share {
+    display: none;
+}
+
 /*MOBILE-RESPONSIVE*/
 
 @media screen and (max-width: 700px) {
+
+    .title__main {
+        font-size: 22px;
+    }
+
     .user__name {
         display: none;
     }
-}
 
+    .user__screen-share {
+        display: block;
+    }
+
+    .user__avatar {
+        display: none;
+    }
+}
 
 @media screen and (max-width: 390px) {
     .header {
@@ -71,9 +87,7 @@
     }
 
 
-    .title__main {
-        font-size: 22px;
-    }
+
 
     .title__main::before {
         height: 3px;

@@ -44,7 +44,7 @@ function App() {
       <Section title='Continuar Viendo' dataApi={section_2} />
       <Section title='Selección para mi' dataApi={section_3} />
       <Section title='Mi Lista' dataApi={mi_lista} />
-      <Footer />
+      <Footer title='Contacto' />
     </div>
   );
 }

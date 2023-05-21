@@ -64,6 +64,12 @@
     border: 1px solid rgb(255, 255, 255);
 }
 
+.footer__btn-return {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+
 /*MOBILE-RESPONSIVE*/
 
 @media screen and (max-width: 700px) {

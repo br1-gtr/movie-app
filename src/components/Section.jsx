@@ -19,7 +19,7 @@ export function Section({ title, dataApi }) {
     return (
         (title !== 'Continuar Viendo')
             ? (title === 'Mi Lista') // MI LISTA
-                ? <div className='section'>
+                ? <div className='section' id={`${title}`}>
                     <h3 className='section__title'>{title}</h3>
                     <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
                     <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
@@ -39,7 +39,7 @@ export function Section({ title, dataApi }) {
                         }
                     </div>
                 </div>
-                : <div className='section'>
+                : <div className='section' id={`${title}`}>
                     <h3 className='section__title'>{title}</h3>
                     <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
                     <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
@@ -58,7 +58,7 @@ export function Section({ title, dataApi }) {
                     </div>
                 </div>
             //CONTINUAR VIENDO
-            : <div className='section'>
+            : <div className='section' id={`${title}`}>
                 <h3 className='section__title'>{title}</h3>
                 <button className='section__btn btn-l' onClick={clickHandlerL}>L</button>
                 <button className='section__btn btn-r' onClick={clickHandlerR}>R</button>
