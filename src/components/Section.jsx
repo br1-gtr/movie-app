@@ -1,7 +1,9 @@
 import React from "react";
 import { Card } from "./Card";
 import '../css/Section.css';
+
 import { useRef } from 'react';
+import { AiOutlinePlusCircle } from 'react-icons/ai';
 
 export function Section({ title, dataApi }) {
 
@@ -12,9 +14,7 @@ export function Section({ title, dataApi }) {
     }
     function clickHandlerR() {
         sliderRef.current.scrollLeft += 220;
-
     }
-
 
     return (
         (title !== 'Continuar Viendo')
@@ -28,10 +28,14 @@ export function Section({ title, dataApi }) {
                             (dataApi.length !== 0)
                                 ? dataApi.map(item => {
                                     return <Card
+                                        key={item}
                                         img={item}
+                                        title={title}
                                     />
                                 })
-                                : <>Cargando...</>
+                                : <div className='list__empty'>
+                                    <AiOutlinePlusCircle size={100} />
+                                </div>
                         }
                     </div>
                 </div>
@@ -46,6 +50,7 @@ export function Section({ title, dataApi }) {
                                     return <Card
                                         key={item.id}
                                         img={item.poster_path}
+                                        title={title}
                                     />
                                 })
                                 : <>Cargando...</>
@@ -64,6 +69,7 @@ export function Section({ title, dataApi }) {
                                 return <Card
                                     key={item.id}
                                     img={item.poster_path}
+                                    title={title}
                                     cv={true}
                                 />
                             })

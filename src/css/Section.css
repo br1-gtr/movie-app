@@ -51,3 +51,17 @@
 .section__items::-webkit-scrollbar {
     width: 0;
 }
+
+/*LISTA SIN ELEMENTOS*/
+.list__empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-left: 10px;
+    width: 190px;
+    height: 280px;
+
+    background-color: rgba(59, 59, 59, 0.878);
+    color: rgb(223, 223, 223);
+}

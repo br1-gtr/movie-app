@@ -5,6 +5,7 @@ import { Slider } from './components/Slider.jsx';
 import { Section } from './components/Section.jsx';
 import { Footer } from './components/Footer.jsx';
 
+//Estado Global
 import { useStoreML } from './store/store-mi-lista.jsx';
 
 function App() {
@@ -13,12 +14,13 @@ function App() {
   const API_URL_4v2 = 'https://api.themoviedb.org/4/list/10?page=2&api_key=';
   const API_URL_TRENDING = 'https://api.themoviedb.org/3/trending/movie/week?api_key=';
   const API_KEY = '2d1ea5bb9d0f92154b9db9cc98f6c371';
-  const IMG_PATH = 'https://image.tmdb.org/t/p/w200';
+  //const IMG_PATH = 'https://image.tmdb.org/t/p/w200';
 
+  //Estados Api
   const [section_1, setSection_1] = useState([]);
   const [section_2, setSection_2] = useState([]);
   const [section_3, setSection_3] = useState([]);
-
+  //Estado Zustand
   const mi_lista = useStoreML(state => state.mi_lista);
 
   useEffect(() => {
@@ -26,7 +28,6 @@ function App() {
     fetchData(API_URL_4v, API_KEY, setSection_2);
     fetchData(API_URL_4v2, API_KEY, setSection_3);
   }, []);
-
 
   const fetchData = (url, key, setDataState) => {
     fetch(`${url}${key}`)
